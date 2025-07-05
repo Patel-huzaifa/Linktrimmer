@@ -13,7 +13,7 @@ export async function POST(req) {
     return Response.json({
       success: false,
       error: true,
-      message: "Short URL already exists",
+      message: "Short URL already exists. Try with a different short name URL",
     });
   } 
   const result = await collection.insertOne({

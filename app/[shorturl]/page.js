@@ -1,6 +1,5 @@
 import { redirect } from "next/navigation";
 import clientPromise from "@/lib/mongodb";
-import { NextResponse } from "next/server";
 
 export default async function Page({ params }) {
   const shorturl = (await params).shorturl;
@@ -8,9 +7,12 @@ export default async function Page({ params }) {
   const db = client.db("linktrimer");
   const collection = db.collection("urls");
   const doc = await collection.findOne({ shorturl: shorturl });
+  
   if (doc) {
     redirect(doc.url);
   } else {
-    redirect(`${process.env.NEXT_PUBLIC_URL}/404`);
+    // Use a fallback URL if NEXT_PUBLIC_URL is not defined
+    const baseUrl = process.env.NEXT_PUBLIC_URL || 'http://localhost:3000';
+    redirect(`${baseUrl}/404`);
   }
 }
