@@ -14,7 +14,7 @@ const About = () => {
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
             We believe in simplicity, privacy, and efficiency. LinkTrimer is
-            more than just a URL shortener - it's your trusted companion for
+            more than just a URL shortener - it&apos;s your trusted companion for
             creating clean, memorable links without compromising your privacy.
           </p>
         </div>
@@ -35,7 +35,7 @@ const About = () => {
                 straightforward, secure, and respectful of your privacy.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                We've eliminated the unnecessary complexity that plagues other
+                We&apos;ve eliminated the unnecessary complexity that plagues other
                 URL shorteners. No accounts to create, no personal data to
                 share, no tracking to worry about. Just pure, simple link
                 shortening that works exactly when you need it.
@@ -100,7 +100,7 @@ const About = () => {
                 Privacy First
               </h3>
               <p className="text-gray-600">
-                Your data stays yours. We don't collect, store, or analyze
+                Your data stays yours. We don&apos;t collect, store, or analyze
                 your personal information. Every link you create is private by
                 default.
               </p>
@@ -186,8 +186,8 @@ const About = () => {
             </p>
 
             <p>
-              Today, we're proud to serve users who value simplicity and
-              privacy. Whether you're sharing links on social media, creating
+              Today, we&apos;re proud to serve users who value simplicity and
+              privacy. Whether you&apos;re sharing links on social media, creating
               memorable URLs for presentations, or just need to clean up a
               long web address, LinkTrimer is here to help - no strings
               attached.
