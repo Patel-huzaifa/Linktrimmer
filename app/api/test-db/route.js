@@ -5,8 +5,20 @@ export async function GET() {
     console.log("Test DB: Starting connection test");
     
     // Test MongoDB connection
-    const client = await clientPromise;
-    console.log("Test DB: Client connected successfully");
+    let client;
+    try {
+      client = await clientPromise;
+      console.log("Test DB: Client connected successfully");
+    } catch (connectionError) {
+      console.error("Test DB: Connection failed:", connectionError.message);
+      return Response.json({
+        success: false,
+        error: true,
+        message: "Database connection failed",
+        details: connectionError.message,
+        timestamp: new Date().toISOString()
+      }, { status: 500 });
+    }
     
     // Test database access
     const db = client.db("linktrimer");

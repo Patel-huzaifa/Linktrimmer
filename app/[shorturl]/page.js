@@ -10,8 +10,14 @@ export default async function Page({ params }) {
     console.log("Redirect: Short URL parameter:", shorturl);
     
     console.log("Redirect: Attempting MongoDB connection");
-    const client = await clientPromise;
-    console.log("Redirect: MongoDB client connected successfully");
+    let client;
+    try {
+      client = await clientPromise;
+      console.log("Redirect: MongoDB client connected successfully");
+    } catch (connectionError) {
+      console.error("Redirect: MongoDB connection failed:", connectionError.message);
+      notFound();
+    }
     
     const db = client.db("linktrimer");
     console.log("Redirect: Database accessed");

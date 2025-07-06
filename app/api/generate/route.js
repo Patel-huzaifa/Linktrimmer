@@ -32,8 +32,19 @@ export async function POST(req) {
     console.log("API: Attempting MongoDB connection");
     
     // Connect to MongoDB
-    const client = await clientPromise;
-    console.log("API: MongoDB client connected successfully");
+    let client;
+    try {
+      client = await clientPromise;
+      console.log("API: MongoDB client connected successfully");
+    } catch (connectionError) {
+      console.error("API: MongoDB connection failed:", connectionError.message);
+      return Response.json({
+        success: false,
+        error: true,
+        message: "Database connection error. Please check your MongoDB configuration.",
+        details: connectionError.message
+      }, { status: 500 });
+    }
     
     const db = client.db("linktrimer");
     console.log("API: Database accessed");
