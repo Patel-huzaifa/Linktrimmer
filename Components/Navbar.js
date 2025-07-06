@@ -53,13 +53,32 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden flex flex-col justify-center items-center w-8 h-8 focus:outline-none cursor-pointer"
+            className="md:hidden relative w-8 h-8 focus:outline-none cursor-pointer"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
-            <span className={`block w-6 h-0.5 bg-gray-700 mb-1 transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-            <span className={`block w-6 h-0.5 bg-gray-700 mb-1 transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
-            <span className={`block w-6 h-0.5 bg-gray-700 transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            <div className="relative w-6 h-6 mx-auto">
+              {/* Top line */}
+              <span 
+                className={`absolute top-0 left-0 w-6 h-0.5 bg-gray-700 transform transition-all duration-300 ease-in-out ${
+                  menuOpen ? 'rotate-45 translate-y-2.5' : ''
+                }`}
+              ></span>
+              
+              {/* Middle line */}
+              <span 
+                className={`absolute top-2 left-0 w-6 h-0.5 bg-gray-700 transform transition-all duration-300 ease-in-out ${
+                  menuOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
+                }`}
+              ></span>
+              
+              {/* Bottom line */}
+              <span 
+                className={`absolute top-4 left-0 w-6 h-0.5 bg-gray-700 transform transition-all duration-300 ease-in-out ${
+                  menuOpen ? '-rotate-45 -translate-y-2' : ''
+                }`}
+              ></span>
+            </div>
           </button>
         </div>
 
