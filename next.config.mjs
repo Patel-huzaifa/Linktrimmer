@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable experimental features for better API route handling
-  experimental: {
-    serverComponentsExternalPackages: ['mongodb']
-  },
+  // Enable external packages for server components
+  serverExternalPackages: ['mongodb'],
   
   // Handle environment variables during build
   env: {
