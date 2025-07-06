@@ -16,7 +16,7 @@ const About = () => {
             We believe in simplicity, privacy, and efficiency. LinkTrimer is
             more than just a URL shortener - it&apos;s your trusted companion for
             creating clean, memorable links without compromising your privacy.
-          </p>
+          </p>E
         </div>
       </section>
 
