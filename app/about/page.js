@@ -1,22 +1,23 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import Footer from "@/Components/Footer";
 
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
       {/* Hero Section */}
       <section className="pt-20 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <h1 className="text-4xl text-white md:text-5xl lg:text-6xl font-bold mb-6">
             About <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">LinkTrimer</span>
           </h1>
-          <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl text-gray-400 leading-relaxed max-w-3xl mx-auto">
             We believe in simplicity, privacy, and efficiency. LinkTrimer is
             more than just a URL shortener - it&apos;s your trusted companion for
             creating clean, memorable links without compromising your privacy.
-          </p>E
+          </p>
         </div>
       </section>
 
@@ -25,45 +26,45 @@ const About = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 order-2 lg:order-1">
-              <h2 className="text-3xl font-bold text-gray-900">
+              <h2 className="text-3xl font-bold text-white">
                 Our Mission
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-lg text-gray-400 leading-relaxed">
                 In a world where every click is tracked and every action is
                 monitored, we stand for something different. LinkTrimer was
                 born from a simple belief: URL shortening should be
                 straightforward, secure, and respectful of your privacy.
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-lg text-gray-400 leading-relaxed">
                 We&apos;ve eliminated the unnecessary complexity that plagues other
                 URL shorteners. No accounts to create, no personal data to
                 share, no tracking to worry about. Just pure, simple link
                 shortening that works exactly when you need it.
               </p>
             </div>
-            <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 order-1 lg:order-2">
+            <div className="bg-gray-800 rounded-2xl p-8 shadow-xl border border-gray-700 order-1 lg:order-2">
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-3 h-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex-shrink-0"></div>
-                  <span className="text-base text-gray-700 font-medium">
+                  <span className="text-base text-gray-300 font-medium">
                     No Registration Required
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-3 h-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex-shrink-0"></div>
-                  <span className="text-base text-gray-700 font-medium">
+                  <span className="text-base text-gray-300 font-medium">
                     Zero Tracking
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-3 h-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex-shrink-0"></div>
-                  <span className="text-base text-gray-700 font-medium">
+                  <span className="text-base text-gray-300 font-medium">
                     Instant Results
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-3 h-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex-shrink-0"></div>
-                  <span className="text-base text-gray-700 font-medium">
+                  <span className="text-base text-gray-300 font-medium">
                     Custom Short URLs
                   </span>
                 </div>
@@ -74,13 +75,13 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-gray-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+          <h2 className="text-3xl font-bold text-center text-white mb-12">
             What We Stand For
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-100">
+            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-purple-900/20 to-purple-800/20 border border-purple-800/30">
               <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-purple-700 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
                   className="w-8 h-8 text-white"
@@ -96,17 +97,17 @@ const About = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-xl font-semibold text-white mb-3">
                 Privacy First
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-400">
                 Your data stays yours. We don&apos;t collect, store, or analyze
                 your personal information. Every link you create is private by
                 default.
               </p>
             </div>
 
-            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-100">
+            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-blue-900/20 to-blue-800/20 border border-blue-800/30">
               <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
                   className="w-8 h-8 text-white"
@@ -122,17 +123,17 @@ const About = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-xl font-semibold text-white mb-3">
                 Lightning Fast
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-400">
                 Get your shortened URL instantly. No waiting, no processing
                 delays. Our streamlined system delivers results in
                 milliseconds.
               </p>
             </div>
 
-            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-indigo-50 to-indigo-100 border border-indigo-100">
+            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-indigo-900/20 to-indigo-800/20 border border-indigo-800/30">
               <div className="w-16 h-16 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
                   className="w-8 h-8 text-white"
@@ -148,10 +149,10 @@ const About = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-xl font-semibold text-white mb-3">
                 Simple & Clean
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-400">
                 No overwhelming interfaces or confusing options. Just a clean,
                 intuitive design that gets the job done without fuss.
               </p>
@@ -164,13 +165,13 @@ const About = () => {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-bold text-white mb-6">
               Our Story
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full"></div>
           </div>
 
-          <div className="space-y-8 text-lg text-gray-600 leading-relaxed">
+          <div className="space-y-8 text-lg text-gray-400 leading-relaxed">
             <p>
               LinkTrimer began as a simple frustration with existing URL
               shorteners. Every tool we tried either required an account,
@@ -197,22 +198,32 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 bg-gradient-to-r from-purple-600 to-blue-600">
+      <section className="py-16 px-4 bg-gray-800 border-t border-gray-700">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Ready to Get Started?
-          </h2>
-          <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of users who trust LinkTrimer for their URL shortening needs.
-            Start creating clean, memorable links today.
-          </p>
-          <Link href="/shorten">
-            <button className="bg-white text-purple-600 font-semibold px-8 py-4 rounded-xl hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 cursor-pointer focus:outline-none">
-              Start Shortening Now
-            </button>
-          </Link>
+          <div className="relative">
+            {/* Background gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-blue-900/20 rounded-2xl"></div>
+            
+            {/* Content */}
+            <div className="relative z-10 bg-gray-800/80 backdrop-blur-sm rounded-2xl p-12 border border-gray-700">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Ready to Get Started?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Join thousands of users who trust LinkTrimer for their URL shortening needs.
+                Start creating clean, memorable links today.
+              </p>
+              <Link href="/shorten">
+                <button className="bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold px-8 py-4 rounded-xl hover:shadow-lg hover:shadow-purple-500/25 transform hover:-translate-y-1 transition-all duration-300 cursor-pointer focus:outline-none">
+                  Start Shortening Now
+                </button>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 };

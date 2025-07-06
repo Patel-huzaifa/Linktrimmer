@@ -3,6 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import Link from "next/link";
+import Footer from "@/Components/Footer";
 
 const Shorten = () => {
   const [url, setUrl] = useState("");
@@ -177,7 +178,7 @@ const Shorten = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
@@ -185,17 +186,17 @@ const Shorten = () => {
             <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-4">
               Shorten Your URLs
             </h1>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-400">
               Transform long URLs into short, memorable links in seconds
             </p>
           </div>
 
           {/* Main Form Card */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
+          <div className="bg-gray-800 rounded-2xl shadow-xl p-8 mb-8">
             <div className="space-y-6">
               {/* URL Input */}
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                <label className="block text-sm font-semibold text-gray-300 mb-2">
                   Original URL
                 </label>
                 <input
@@ -203,14 +204,14 @@ const Shorten = () => {
                   value={url}
                   onChange={(e) => setUrl(e.target.value)}
                   placeholder="https://example.com/very-long-url-that-needs-shortening"
-                  className="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors duration-200 text-gray-700"
+                  className="w-full p-4 border-2 border-gray-600 rounded-xl focus:border-purple-500 focus:outline-none transition-colors duration-200 text-gray-300 bg-gray-700"
                   disabled={isLoading}
                 />
               </div>
 
               {/* Short URL Input */}
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                <label className="block text-sm font-semibold text-gray-300 mb-2">
                   Custom Short URL
                 </label>
                 <input
@@ -218,10 +219,10 @@ const Shorten = () => {
                   value={shortUrl}
                   onChange={(e) => setShortUrl(e.target.value)}
                   placeholder="my-short-link"
-                  className="w-full p-4 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors duration-200 text-gray-700"
+                  className="w-full p-4 border-2 border-gray-600 rounded-xl focus:border-purple-500 focus:outline-none transition-colors duration-200 text-gray-300 bg-gray-700"
                   disabled={isLoading}
                 />
-                <p className="text-xs text-gray-500 mt-1">
+                <p className="text-xs text-gray-400 mt-1">
                   Use only letters, numbers, and hyphens (1-50 characters)
                 </p>
               </div>
@@ -246,14 +247,14 @@ const Shorten = () => {
 
           {/* URLs List Section */}
           {urls.length > 0 && (
-            <div className="bg-white rounded-2xl shadow-xl p-8">
+            <div className="bg-gray-800 rounded-2xl shadow-xl p-8">
               <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-bold text-gray-900">
+                <h2 className="text-2xl font-bold text-white">
                   Your Shortened URLs ({urls.length})
                 </h2>
                 <button
                   onClick={clearAllUrls}
-                  className="text-red-600 hover:text-red-700 font-medium cursor-pointer focus:outline-none"
+                  className="text-red-400 hover:text-red-300 font-medium cursor-pointer focus:outline-none"
                 >
                   Clear All
                 </button>
@@ -263,18 +264,18 @@ const Shorten = () => {
                 {urls.map((urlItem) => (
                   <div
                     key={urlItem.id}
-                    className="border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow duration-200"
+                    className="border border-gray-600 rounded-xl p-6 hover:shadow-md transition-shadow duration-200 bg-gray-700/50"
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1 min-w-0">
                         {/* Short URL */}
                         <div className="mb-3">
-                          <label className="block text-sm font-semibold text-gray-700 mb-1">
+                          <label className="block text-sm font-semibold text-gray-300 mb-1">
                             Short URL
                           </label>
                           <div className="flex items-center gap-2">
                             <Link href={urlItem.generatedUrl} target="_blank">
-                              <code className="flex-1 text-lg font-mono text-purple-600 break-all cursor-pointer">
+                              <code className="flex-1 text-lg font-mono text-purple-400 break-all cursor-pointer">
                                 {urlItem.generatedUrl}
                               </code>
                             </Link>
@@ -304,16 +305,16 @@ const Shorten = () => {
 
                         {/* Original URL */}
                         <div className="mb-4">
-                          <label className="block text-sm font-semibold text-gray-700 mb-1">
+                          <label className="block text-sm font-semibold text-gray-300 mb-1">
                             Original URL
                           </label>
-                          <p className="text-sm text-gray-600 break-all">
+                          <p className="text-sm text-gray-400 break-all">
                             {urlItem.originalUrl}
                           </p>
                         </div>
 
                         {/* Created Date */}
-                        <div className="text-xs text-gray-500">
+                        <div className="text-xs text-gray-400">
                           Created:{" "}
                           {new Date(urlItem.createdAt).toLocaleString()}
                         </div>
@@ -344,10 +345,10 @@ const Shorten = () => {
 
           {/* Empty State */}
           {urls.length === 0 && (
-            <div className="bg-white rounded-2xl shadow-xl p-8 text-center">
-              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="bg-gray-800 rounded-2xl mb-10 shadow-xl p-8 text-center">
+              <div className="w-16 h-16 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
-                  className="w-8 h-8 text-gray-400"
+                  className="w-8 h-8 text-gray-500"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -360,16 +361,18 @@ const Shorten = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-white mb-2">
                 No URLs Yet
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-400 mb-4">
                 Start by creating your first shortened URL above
               </p>
             </div>
           )}
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };
